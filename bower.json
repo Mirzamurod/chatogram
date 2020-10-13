@@ -1,0 +1,13 @@
+{
+  "name": "chatogram",
+  "description": "Yangi Chat",
+  "main": "app.js",
+  "authors": [
+    "Mirzamurod <rahimberdiyevmirzamurod@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Mirzamurod/chatogram",
+  "dependencies": {
+    "angular": "^1.8.1"
+  }
+}
