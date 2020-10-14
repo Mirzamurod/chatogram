@@ -1,5 +1,19 @@
 extends layout
 
+append stylesheets
+    link(rel="stylesheet" href="/stylesheets/index.css")
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+
 block content
-  h1= title
-  p Welcome to #{title}
+    div(ng-controller="indexController")
+        .modal
+            .modal__inner
+                .modal__header
+                    h2 Hush kelibsiz, iltimos ro'yxatdan o'ting.
+                .modal__footer
+                    a(href='#')
+                        i.fa.fa-google-plus(aria-hidden='true')
+                        | Google orqali ro'yxatdan o'tish
+
+append javascripts
+    script(src="/javascripts/controller/indexController.js")
