@@ -7,6 +7,7 @@ const passport = require('passport')
 const session = require('express-session')
 // const mongoose = require("mongoose");
 const dotenv = require('dotenv')
+const redisStore = require('./helpers/redisStore')
 dotenv.config()
 
 const indexRouter = require('./routes/index');
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 
 app.use(session({
+    store: redisStore,
     secret: process.env.SESSION_SECRET_KEY,
     resave: false,
     saveUninitialized: true,
