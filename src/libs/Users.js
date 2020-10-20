@@ -1,17 +1,13 @@
-const redis = require('redis')
+const redisClient = require('../libs/redisClient')
 
 function Users() {
-    this.client = redis.createClient({
-        host: process.env.REDIS_URI,
-        port: process.env.REDIS_PORT
-    })
+    this.client = redisClient.getClient()
 }
 
+module.exports = new Users();
+
 Users.prototype.upsert = function (connectionId, meta) {
-    this.client.hset(
-        'online',
-        meta.googleId, // joyiga qaytdi
-        JSON.stringify({
+    this.client.hset('online', meta.googleId, JSON.stringify({
             connectionId,
             meta,
             when: Date.now()
@@ -24,4 +20,26 @@ Users.prototype.upsert = function (connectionId, meta) {
     // console.log(meta.googleId)
 };
 
-module.exports = new Users();
+Users.prototype.remove = function (googleId) {
+    this.client.hdel('online', googleId, err => {
+        if (err)
+            console.log(err);
+    })
+}
+
+Users.prototype.list = function (callback) {
+    let active = []
+
+    this.client.hgetall('online', function (err, users) {
+        if (err) {
+            console.log(err);
+            return callback([])
+        }
+
+        for (let user in users) {
+            active.push(JSON.parse(users[user]))
+        }
+
+        return callback(active)
+    })
+}
