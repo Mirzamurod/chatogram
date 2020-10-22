@@ -1,0 +1,10 @@
+DB_STRING = mongodb://localhost/chatogram
+
+GOOGLE_CLIENT_ID = 261823091436-4jrv6sdn6utk05hdpada5vs5qps5flt2.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET = q2YNPjOO6hsQX0d0Un8k3M9I
+GOOGLE_LOGIN_CALLBACK_URL = /auth/google/callback
+SESSION_SECRET_KEY = juda maxfiy
+
+REDIS_URI = 127.0.0.1
+REDIS_PORT = 6379
+REDIS_PASS =
