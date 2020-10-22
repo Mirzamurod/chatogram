@@ -8,3 +8,4 @@ SESSION_SECRET_KEY = juda maxfiy
 REDIS_URI = 127.0.0.1
 REDIS_PORT = 6379
 REDIS_PASS =
+.env fayl
