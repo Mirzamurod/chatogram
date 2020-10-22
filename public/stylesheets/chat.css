@@ -20,15 +20,15 @@ body {
     text-rendering: optimizeLegibility;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
-    background: #1f252d url("https://source.unsplash.com/random/nature") no-repeat center fixed;
+    background-image: url('https://source.unsplash.com/random/1920x1080');
     background-size: cover;
     background-repeat: none;
 }
 
 ul,li{
-  margin: 0;
-  padding: 0;
-  list-style-type: none
+    margin:0;
+    padding:0;
+    list-style-type: none
 }
 
 .wrapper {
@@ -115,7 +115,11 @@ ul,li{
     border-left: 1px solid var(--light);
     width: calc(100% + 2px);
     height: calc(76% + 1px);
-    overflow: scroll;
+    overflow:scroll;
+}
+
+.container .left .people {
+
 }
 
 .container .left .people .person {
@@ -323,6 +327,10 @@ ul,li{
     font-weight: 400;
 }
 
+.send{
+    cursor: pointer !important;
+}
+
 .container .right .write .write-link.attach:before {
     display: inline-block;
     float: left;
@@ -355,10 +363,6 @@ ul,li{
     background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/382994/send.png");
     background-repeat: no-repeat;
     background-position: center;
-}
-
-.send{
-    cursor: pointer !important;
 }
 
 .container .right .bubble {
@@ -443,6 +447,10 @@ ul,li{
     right: 0;
 }
 
+.tab{
+
+}
+
 .tab li{
     width: 50%;
     float: left;
@@ -468,7 +476,13 @@ ul,li{
     text-align: center;
     padding-top: 16px
 }
-
+.loading{
+    text-align: center;
+    font-size: 18px;
+    padding: 30px 0;
+    /*position: absolute;
+    left: 180px;*/
+}
 @keyframes slideFromLeft {
     0% {
         margin-left: -200px;
@@ -512,3 +526,5 @@ ul,li{
         opacity: 1;
     }
 }
+
+

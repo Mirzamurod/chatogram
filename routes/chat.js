@@ -1,8 +1,10 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.render('chat', { user: req.user });
+/* GET CHAT home page. */
+router.get('/', (req, res, next) => {
+  console.log(req.user)
+  res.render('chat', { user: req.user });
 });
 
 module.exports = router;

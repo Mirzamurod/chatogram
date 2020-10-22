@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const findOrCreate = require('mongoose-find-or-create')
+const findOrCreate = require('mongoose-find-or-create');
 
 const userSchema = new Schema({
-    googleId: {
+    googleId:{
         type: String,
         unique: true
     },
@@ -11,7 +11,5 @@ const userSchema = new Schema({
     surname: String,
     profilePhotoUrl: String
 });
-
-userSchema.plugin(findOrCreate)
-
-module.exports  = mongoose.model("users", userSchema);
+userSchema.plugin(findOrCreate);
+module.exports = mongoose.model('users', userSchema);

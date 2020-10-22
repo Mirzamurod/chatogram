@@ -1,13 +1,15 @@
 doctype html
 html
-    head
-        title= title
-        block stylesheets
-            link(rel='stylesheet', href='/stylesheets/style.css')
-    body
-        div(ng-app="chatogram", ng-cloak)
-            block content
+  head
+    title Chatogram
+    block stylesheets
+      link(rel='stylesheet', href='/stylesheets/style.css')
+      link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+  body
+    div(ng-app="chatogram", ng-cloak)
+      block content
 
-            block javascripts
-                script(src="/angular/angular.min.js")
-                script(src="/javascripts/main.js")
+
+  block javascripts
+    script(src="/angular/angular.min.js")
+    script(src="/javascripts/main.js")

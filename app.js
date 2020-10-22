@@ -5,9 +5,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const passport = require('passport')
 const session = require('express-session')
-// const mongoose = require("mongoose");
-const dotenv = require('dotenv')
 const redisStore = require('./helpers/redisStore')
+const dotenv = require('dotenv')
 dotenv.config()
 
 const indexRouter = require('./routes/index');

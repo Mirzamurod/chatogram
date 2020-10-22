@@ -1,5 +1,5 @@
-const app = angular.module('chatogram', [])
+const app = angular.module('chatogram',[]);
 
 app.value('env', {
-    SERVICES_URL: 'http://localhost:3000'
-})
+   'SERVICE_URL': 'http://localhost:3000'
+});

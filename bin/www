@@ -35,10 +35,10 @@ server.on('listening', onListening);
  * attach socket.io
  */
 
-    const socketApi = require('../src/socketApi')
-    const io = socketApi.io
+const socketApi = require('../src/socketApi')
+const io = socketApi.io
 
-    io.attach(server)
+io.attach(server)
 
 /**
  * Normalize a port into a number, string, or false.
