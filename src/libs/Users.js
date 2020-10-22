@@ -1,4 +1,4 @@
-const redisClient = require('../libs/redisClient')
+const redisClient = require('./redisClient')
 
 function Users() {
     this.client = redisClient.getClient()

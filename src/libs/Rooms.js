@@ -1,4 +1,4 @@
-const redisClient = require('../libs/redisClient')
+const redisClient = require('./redisClient')
 const shortid = require('shortid')
 
 function Rooms() {
@@ -8,10 +8,11 @@ function Rooms() {
 module.exports = new Rooms();
 
 Rooms.prototype.upsert = function (name) {
-    const newId = shortid.generate()
+    const roomId = shortid.generate()
 
-    this.client.hset('rooms', '@Room:' + newId, JSON.stringify({
+    this.client.hset('rooms', '@Room:' + roomId, JSON.stringify({
             name,
+            roomId,
             when: Date.now()
         }),
         err => {

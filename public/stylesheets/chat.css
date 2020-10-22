@@ -357,6 +357,10 @@ ul,li{
     background-position: center;
 }
 
+.send{
+    cursor: pointer !important;
+}
+
 .container .right .bubble {
     font-size: 16px;
     position: relative;

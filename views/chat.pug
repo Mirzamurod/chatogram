@@ -37,24 +37,15 @@ block content
                         span
                             span.name {{ chatName }}
                     .chat.active-chat
-                        .bubble.you
-                            span David Beckham
-                            | Salom meni eshitayapsizmi?
-                        .bubble.you
-                            span David Beckham
-                            | Men sizning muxlisingizman
-                        .bubble.me ... uzr sizni tanimayman.
-                        .bubble.me Jiddiymisiz?
-                        .bubble.you
-                            span David Beckham
-                            | Ha chindan Davidman...
-                        .bubble.you
-                            span David Beckham
-                            | Football afsonasi
+                        .bubble.you(ng-repeat="data in messages[roomId]")
+                            span {{ data.name }} {{ data.username }}
+                            | {{ data.message }}
                     .write
-                        input(type='text' placeholder='Xabarni yozing...')
-                        a.write-link.send(href='javascript:;')
+                        form(ng-submit="newMessage()")
+                            input(placeholder='Xabarni yozing...', ng-model="message")
+                            a.write-link.send(ng-click="newMessage()")
 
 append javascripts
     script(src="http://localhost:3000/socket.io/socket.io.js")
+    script(src="/javascripts/services/chatFactory.js")
     script(src="/javascripts/controller/chatController.js")

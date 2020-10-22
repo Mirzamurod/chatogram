@@ -6,6 +6,7 @@ const io = socketio()
 // libs
 const Users = require('./libs/Users')
 const Rooms = require('./libs/Rooms')
+const Messages = require('./libs/Messages')
 
 const socketApi = {
     io
@@ -22,7 +23,7 @@ io.adapter(redisAdapter({
 }))
 
 io.on('connection', socket => {
-    console.log('a user is logged in with name: ' + socket.request.user.name);
+    // console.log('a user is logged in with name: ' + socket.request.user.name);
 
     // Rooms.list(rooms => {
     //     // console.log(rooms);
@@ -34,6 +35,15 @@ io.on('connection', socket => {
     Users.list(users => {
         // console.log(users);
         io.emit('onlineList', users)
+    })
+
+    socket.on('newMessage', data => {
+        console.log(data);
+        Messages.upsert({
+            ...data,
+            username: socket.request.user.name,
+            surname: socket.request.user.surname
+        })
     })
 
     socket.on('newRoom', roomName => {
