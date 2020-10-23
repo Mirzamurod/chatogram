@@ -1,4 +1,4 @@
 # chatogram
-npm install
-bower install
-.env change
+# npm install,
+# bower install,
+# .env change
